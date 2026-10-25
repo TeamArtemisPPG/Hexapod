@@ -1,0 +1,719 @@
+<?xml version='1.0'?>
+<robot name="hexa_body">
+    <link name="world"/>
+
+    <joint name="world_fixed_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link-v1"/>
+    <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    </joint>
+    <link name="base_link-v1">
+        <inertial>
+            <origin xyz="2.712852943290537e-05 -1.5662663929992053e-05 0.005762950187852152" rpy="0.0 0.0 0.0" />
+            <mass value="10.0" />
+            <inertia ixx="0.05" iyy="0.05" izz="0.08" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual name="base_link-v1_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/base_link-v1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_link-v1_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/base_link-v1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NCCUP1">
+        <inertial>
+            <origin xyz="-0.020695643216372437 -0.018195207287062764 -0.017181719185103108" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="0.0003" iyy="0.0003" izz="0.0003" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual name="NCCUP1_visual">
+            <origin xyz="-0.06540737354837091 0.022980968497939413 0.027500000000000024" rpy="-3.1415926535897927 -1.2171227592358037e-15 0.7853981633974491" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP1_collision">
+            <origin xyz="-0.06540737354837091 0.022980968497939413 0.027500000000000024" rpy="-3.1415926535897927 -1.2171227592358037e-15 0.7853981633974491" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH1">
+        <inertial>
+            <origin xyz="-0.024217886556145797 2.44114918692695e-07 0.03305724577340911" rpy="0.0 -3.8893845486632127e-62 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="0.0002" iyy="0.0002" izz="0.0002" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual name="NTHIGH1_visual">
+            <origin xyz="-0.06273333463760049 0.0855002359512272 0.09808867178562687" rpy="-0.7853981633974497 -1.8375824944105457e-16 -1.5707963267948957" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH1_collision">
+            <origin xyz="-0.06273333463760049 0.0855002359512272 0.09808867178562687" rpy="-0.7853981633974497 -1.8375824944105457e-16 -1.5707963267948957" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NFOOT1">
+        <inertial>
+            <origin xyz="0.004535789983342884 -0.020215117802053692 0.10637478248592012" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.0004" iyy="0.0004" izz="0.0004" ixy="0.0" iyz="0.0" ixz="0.0"/>
+        </inertial>
+        <visual name="NFOOT1_visual">
+            <origin xyz="-0.010638446838941053 -0.003567377115774555 0.0899999856574203" rpy="3.1415926535897922 7.834680870942552e-16 -2.356194490192344" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT1_collision">
+            <origin xyz="-0.010638446838941053 -0.003567377115774555 0.0899999856574203" rpy="3.1415926535897922 7.834680870942552e-16 -2.356194490192344" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="NCCUP2">
+        <inertial>
+            <origin xyz="-0.001768073682642175 -0.027499985565556582 -0.017181719185103073" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="1.580413454918607e-05" iyy="1.5668829409239084e-05" izz="1.5487214304018605e-05" ixy="-9.078316746479018e-07" iyz="-1.0036835671534803e-06" ixz="-1.0165740588559982e-07" />
+        </inertial>
+        <visual name="NCCUP2_visual">
+            <origin xyz="-0.06249999451988662 -0.030000000160992534 0.027499999999999986" rpy="3.141592653589793 -4.2728430609560554e-48 1.570796326794897" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP2_collision">
+            <origin xyz="-0.06249999451988662 -0.030000000160992534 0.027499999999999986" rpy="3.141592653589793 -4.2728430609560554e-48 1.570796326794897" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NCCUP5">
+        <inertial>
+            <origin xyz="0.0017680736826421928 0.027499985565556696 -0.01718171918510304" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="1.5804134549186584e-05" iyy="1.5668829409239355e-05" izz="1.5487214304017467e-05" ixy="-9.07831674647712e-07" iyz="1.0036835671536226e-06" ixz="1.0165740588576245e-07" />
+        </inertial>
+        <visual name="NCCUP5_visual">
+            <origin xyz="0.0624999945198869 0.030000000160992694 0.027500000000000066" rpy="-3.1415926535897922 6.909693166069404e-16 -1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP5_collision">
+            <origin xyz="0.0624999945198869 0.030000000160992694 0.027500000000000066" rpy="-3.1415926535897922 6.909693166069404e-16 -1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NCCUP3">
+        <inertial>
+            <origin xyz="0.0274999868486864 -0.0017680771303410037 -0.017181719185102994" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="1.566882940924018e-05" iyy="1.5804134549187072e-05" izz="1.5487214304017087e-05" ixy="9.078316746478476e-07" iyz="-1.0165740588560999e-07" ixz="1.0036835671535955e-06" />
+        </inertial>
+        <visual name="NCCUP3_visual">
+            <origin xyz="0.030000001444122387 -0.062499997967585694 0.027499999999999934" rpy="-3.141592653589793 3.4089111761611983e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP3_collision">
+            <origin xyz="0.030000001444122387 -0.062499997967585694 0.027499999999999934" rpy="-3.141592653589793 3.4089111761611983e-16 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NCCUP4">
+        <inertial>
+            <origin xyz="0.020695643216372694 0.018195207287062694 -0.01718171918510303" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="1.4828650304566369e-05" iyy="1.6644313653861352e-05" izz="1.5487214304017033e-05" ixy="-6.765256997328956e-08" iyz="6.37828815440298e-07" ixz="7.815940975592589e-07" />
+        </inertial>
+        <visual name="NCCUP4_visual">
+            <origin xyz="0.06540737354837116 -0.02298096849793959 0.02749999999999993" rpy="3.141592653589793 5.554165257653203e-16 -2.356194490192347" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP4_collision">
+            <origin xyz="0.06540737354837116 -0.02298096849793959 0.02749999999999993" rpy="3.141592653589793 5.554165257653203e-16 -2.356194490192347" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NCCUP6">
+        <inertial>
+            <origin xyz="-0.027499986848686167 0.0017680771303408883 -0.01718171918510303" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27798154410830594" />
+            <inertia ixx="1.5668829409238067e-05" iyy="1.5804134549185934e-05" izz="1.548721430401828e-05" ixy="9.078316746484439e-07" iyz="1.0165740588581666e-07" ixz="-1.0036835671532702e-06" />
+        </inertial>
+        <visual name="NCCUP6_visual">
+            <origin xyz="-0.030000001444121977 0.06249999796758516 0.027499999999999948" rpy="-3.141592653589792 -9.074325814278842e-16 1.7624790515924634e-15" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NCCUP6_collision">
+            <origin xyz="-0.030000001444121977 0.06249999796758516 0.027499999999999948" rpy="-3.141592653589792 -9.074325814278842e-16 1.7624790515924634e-15" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NCCUP6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH5">
+        <inertial>
+            <origin xyz="-0.0062503676754773 2.427649666802978e-07 -0.04049964181326903" rpy="1.232595164407831e-32 5.641527646774064e-49 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="2.2284439489578043e-05" iyy="2.4080501546122877e-05" izz="4.73718015147389e-06" ixy="-9.363963462049803e-14" iyz="-1.4078838831075234e-11" ixz="-2.0977119084071295e-13" />
+        </inertial>
+        <visual name="NTHIGH5_visual">
+            <origin xyz="-0.024999995480112613 -0.08549974907134099 0.03271905502903615" rpy="-1.5707963267948954 1.3795729865786206e-17 1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH5_collision">
+            <origin xyz="-0.024999995480112613 -0.08549974907134099 0.03271905502903615" rpy="-1.5707963267948954 1.3795729865786206e-17 1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH2">
+        <inertial>
+            <origin xyz="0.006250367675477486 2.441149185905545e-07 0.04049963878960645" rpy="0.0 -0.0 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="2.2284439489578267e-05" iyy="2.408050154612462e-05" izz="4.7371801514717624e-06" ixy="-9.363938389874564e-14" iyz="1.4078838896468997e-11" ixz="2.097700826260734e-13" />
+        </inertial>
+        <visual name="NTHIGH2_visual">
+            <origin xyz="0.02499999548011294 0.0855002359512269 0.1137183356319116" rpy="-1.5707963267948983 1.9780825888734632e-18 -1.5707963267948986" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH2_collision">
+            <origin xyz="0.02499999548011294 0.0855002359512269 0.1137183356319116" rpy="-1.5707963267948983 1.9780825888734632e-18 -1.5707963267948986" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH6">
+        <inertial>
+            <origin xyz="-0.04049964309639817 2.4276496620956326e-07 0.006250374227778383" rpy="0.0 -0.0 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="4.7371801514766956e-06" iyy="2.408050154612256e-05" izz="2.2284439489581465e-05" ixy="-1.407883767792599e-11" iyz="9.363940072942655e-14" ixz="2.0976962062256526e-13" />
+        </inertial>
+        <visual name="NTHIGH6_visual">
+            <origin xyz="0.0327190537459069 -0.0854997490713407 0.02500000203241353" rpy="2.7478019859472782e-15 5.181416208777911e-16 1.5707963267948963" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH6_collision">
+            <origin xyz="0.0327190537459069 -0.0854997490713407 0.02500000203241353" rpy="2.7478019859472782e-15 5.181416208777911e-16 1.5707963267948963" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH3">
+        <inertial>
+            <origin xyz="0.04049964007273653 2.441149186704905e-07 -0.006250374227778504" rpy="0.0 -0.0 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="4.737180151472508e-06" iyy="2.4080501546124293e-05" izz="2.2284439489578863e-05" ixy="1.4078838694365527e-11" iyz="9.364028841995721e-14" ixz="-2.097708939027021e-13" />
+        </inertial>
+        <visual name="NTHIGH3_visual">
+            <origin xyz="0.11371833691504142 0.08550023595122644 -0.025000002032413753" rpy="3.1415926535897927 1.1056118842410544e-15 -1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH3_collision">
+            <origin xyz="0.11371833691504142 0.08550023595122644 -0.025000002032413753" rpy="3.1415926535897927 1.1056118842410544e-15 -1.5707963267948968" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NTHIGH4">
+        <inertial>
+            <origin xyz="0.024217886556146002 2.441149189058578e-07 -0.03305724577340863" rpy="0.0 -6.037974890946222e-48 0.0" />
+            <mass value="0.20557094282270986" />
+            <inertia ixx="1.351080961075593e-05" iyy="2.40805015461218e-05" izz="1.3510810030296553e-05" ixy="1.0021456192823682e-11" iyz="-9.889029632168307e-12" ixz="8.773629669051933e-06" />
+        </inertial>
+        <visual name="NTHIGH4_visual">
+            <origin xyz="0.06273333463760081 0.0855002359512269 -0.0980886717856263" rpy="2.3561944901923435 -1.179063048343477e-16 -1.5707963267948963" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NTHIGH4_collision">
+            <origin xyz="0.06273333463760081 0.0855002359512269 -0.0980886717856263" rpy="2.3561944901923435 -1.179063048343477e-16 -1.5707963267948963" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NTHIGH4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="NFOOT2">
+        <inertial>
+            <origin xyz="0.017501531567183877 -0.011086963125896113 0.10637478248591992" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.00011859956352788543" iyy="0.00013206927013850473" izz="1.6241122343226434e-05" ixy="3.578824841291039e-07" iyz="9.228867968468055e-06" ixz="-3.3824457162876247e-06" />
+        </inertial>
+        <visual name="NFOOT2_visual">
+            <origin xyz="-0.005000004519886927 -0.010045038551560559 0.08999998565742011" rpy="3.141592653589792 1.543124083654393e-16 -1.5707963267948952" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT2_collision">
+            <origin xyz="-0.005000004519886927 -0.010045038551560559 0.08999998565742011" rpy="3.141592653589792 1.543124083654393e-16 -1.5707963267948952" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="NFOOT3">
+        <inertial>
+            <origin xyz="0.011086964409026798 0.01750153811948437 0.10637478248591967" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.00013206927013850546" iyy="0.00011859956352788608" izz="1.6241122343226217e-05" ixy="-3.578824841290497e-07" iyz="-3.3824457162874485e-06" ixz="-9.228867968467946e-06" />
+        </inertial>
+        <visual name="NFOOT3_visual">
+            <origin xyz="0.010045039834691209 -0.004999997967586447 0.08999998565741989" rpy="-3.141592653589793 -4.619880789652061e-16 -2.9143354396410315e-16" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT3_collision">
+            <origin xyz="0.010045039834691209 -0.004999997967586447 0.08999998565741989" rpy="-3.141592653589793 -4.619880789652061e-16 -2.9143354396410315e-16" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT3.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="NFOOT4">
+        <inertial>
+            <origin xyz="-0.0045357899833422975 0.020215117802053442 0.10637478248592012" rpy="0.0 -0.0 1.3393603245675808e-63" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.00012569229931732456" iyy="0.00012497653434906603" izz="1.6241122343226217e-05" ixy="6.734853305309977e-06" iyz="-8.917545426161046e-06" ixz="-4.1340448201967735e-06" />
+        </inertial>
+        <visual name="NFOOT4_visual">
+            <origin xyz="0.010638446838941676 0.003567377115774271 0.08999998565742033" rpy="-3.141592653589793 -3.4531326487890624e-16 0.7853981633974462" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT4_collision">
+            <origin xyz="0.010638446838941676 0.003567377115774271 0.08999998565742033" rpy="-3.141592653589793 -3.4531326487890624e-16 0.7853981633974462" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT4.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="NFOOT6">
+        <inertial>
+            <origin xyz="-0.01108696440902616 -0.017501538119484624 0.10637478248591935" rpy="4.3790577010150533e-47 -0.0 0.0" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.0001320692701385047" iyy="0.00011859956352788583" izz="1.6241122343225783e-05" ixy="-3.578824841286701e-07" iyz="3.3824457162876243e-06" ixz="9.228867968468162e-06" />
+        </inertial>
+        <visual name="NFOOT6_visual">
+            <origin xyz="-0.01004503983469057 0.00499999796758619 0.0899999856574196" rpy="3.1415926535897922 1.1720369156606779e-15 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT6_collision">
+            <origin xyz="-0.01004503983469057 0.00499999796758619 0.0899999856574196" rpy="3.1415926535897922 1.1720369156606779e-15 -3.1415926535897922" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT6.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="NFOOT5">
+        <inertial>
+            <origin xyz="-0.017501531567183665 0.011086963125897107 0.10637478248592003" rpy="0.0 -0.0 0.0" />
+            <mass value="0.27067885743152522" />
+            <inertia ixx="0.00011859956352788564" iyy="0.00013206927013850479" izz="1.624112234322665e-05" ixy="3.578824841292123e-07" iyz="-9.22886796846773e-06" ixz="3.3824457162875976e-06" />
+        </inertial>
+        <visual name="NFOOT5_visual">
+            <origin xyz="0.005000004519887131 0.010045038551561554 0.08999998565742022" rpy="3.1415926535897922 -5.63796312768825e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="NFOOT5_collision">
+            <origin xyz="0.005000004519887131 0.010045038551561554 0.08999998565742022" rpy="3.1415926535897922 -5.63796312768825e-16 1.5707963267948966" />
+            <geometry>
+                <mesh filename="package://rover/meshes/NFOOT5.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <surface>
+  <friction>
+    <ode>
+      <mu>2.0</mu>
+      <mu2>2.0</mu2>
+    </ode>
+  </friction>
+</surface>
+        </collision>
+    </link>
+    <link name="top-plate-v2">
+        <inertial>
+            <origin xyz="-0.010025124467845354 0.062102341805584 -0.0254733619298601" rpy="0.0 -0.0 0.0" />
+            <mass value="0.0686742158868039" />
+            <inertia ixx="0.00012396106532001281" iyy="0.00014298093718854022" izz="0.00015725538588674877" ixy="-3.4477333857619834e-10" iyz="2.786938033427336e-10" ixz="4.4579424334897835e-06" />
+        </inertial>
+        <visual name="top-plate-v2_visual">
+            <origin xyz="-0.005000000000000016 0.06210254 0.031999999999999994" rpy="3.141592653589793 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/top-plate-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="top-plate-v2_collision">
+            <origin xyz="-0.005000000000000016 0.06210254 0.031999999999999994" rpy="3.141592653589793 -0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/top-plate-v2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <!--JOINTS-->
+    <joint name="NFOOT1_joint" type="revolute">
+        <origin xyz="-0.05727514 4.89999999997437e-07 0.05727514000000001" rpy="-1.5707963267948966 1.4660121047553113e-30 1.972152263052529e-31" />
+        <parent link="NTHIGH1" />
+        <child link="NFOOT1" />
+        <axis xyz="-0.707107 0.707107 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH1_joint" type="revolute">
+        <origin xyz="-0.05179557 -0.02598618 -0.01925" rpy="1.5707963267948966 1.9721522630525295e-31 -1.4660121047553113e-30" />
+        <parent link="NCCUP1" />
+        <child link="NTHIGH1" />
+        <axis xyz="0.707107 0.0 0.707107" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP1_joint" type="revolute">
+        <origin xyz="2.4000000000000003e-07 0.09660218000000001 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP1" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NFOOT2_joint" type="revolute">
+        <origin xyz="0.0 4.900000000063187e-07 0.08099927999999999" rpy="-1.5707963267948968 -2.4151899563784887e-47 -3.944304526105059e-31" />
+        <parent link="NTHIGH2" />
+        <child link="NFOOT2" />
+        <axis xyz="-1.0 0.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH2_joint" type="revolute">
+        <origin xyz="-0.01824999000000001 -0.055 -0.01925" rpy="1.5707963267948968 -1.8231490071858814e-63 -1.6458392797524796e-80" />
+        <parent link="NCCUP2" />
+        <child link="NTHIGH2" />
+        <axis xyz="1.0 0.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP2_joint" type="revolute">
+        <origin xyz="0.08366006000000001 0.04830088 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP2" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NFOOT3_joint" type="revolute">
+        <origin xyz="0.08099928 4.89999999997437e-07 0.0" rpy="-1.5707963267948968 -4.837106656182432e-34 1.9721522630525295e-31" />
+        <parent link="NTHIGH3" />
+        <child link="NFOOT3" />
+        <axis xyz="0.0 -1.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH3_joint" type="revolute">
+        <origin xyz="0.055 -0.01825 -0.01925" rpy="1.5707963267948968 -0.0 4.837106656182553e-34" />
+        <parent link="NCCUP3" />
+        <child link="NTHIGH3" />
+        <axis xyz="0.0 0.0 -1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP3_joint" type="revolute">
+        <origin xyz="0.08365982000000001 -0.0483013 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP3" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NFOOT4_joint" type="revolute">
+        <origin xyz="0.05727514000000001 4.89999999997437e-07 -0.05727514000000001" rpy="-1.5707963267948968 2.1210375442333734e-31 1.4791141972893971e-31" />
+        <parent link="NTHIGH4" />
+        <child link="NFOOT4" />
+        <axis xyz="0.707107 -0.707107 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH4_joint" type="revolute">
+        <origin xyz="0.05179557 0.02598618 -0.01925" rpy="1.5707963267948968 9.860761315262648e-32 -1.8745185113518074e-31" />
+        <parent link="NCCUP4" />
+        <child link="NTHIGH4" />
+        <axis xyz="-0.707107 0.0 -0.707107" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP4_joint" type="revolute">
+        <origin xyz="-2.4000000000000003e-07 -0.09660218000000001 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP4" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NFOOT5_joint" type="revolute">
+        <origin xyz="8.881784197001253e-18 4.899999999885552e-07 -0.08099927999999999" rpy="-1.5707963267948968 2.157411919841669e-32 -9.86076131526265e-32" />
+        <parent link="NTHIGH5" />
+        <child link="NFOOT5" />
+        <axis xyz="1.0 0.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH5_joint" type="revolute">
+        <origin xyz="0.01824999000000001 0.055 -0.01925" rpy="1.5707963267948968 -9.86076131526265e-32 -2.1574119198416696e-32" />
+        <parent link="NCCUP5" />
+        <child link="NTHIGH5" />
+        <axis xyz="-1.0 0.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP5_joint" type="revolute">
+        <origin xyz="-0.08366006000000001 -0.04830088 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP5" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NFOOT6_joint" type="revolute">
+        <origin xyz="-0.08099928 4.89999999997437e-07 0.0" rpy="-1.5707963267948968 -3.998838309677898e-32 2.4485822681274167e-48" />
+        <parent link="NTHIGH6" />
+        <child link="NFOOT6" />
+        <axis xyz="0.0 1.0 0.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NTHIGH6_joint" type="revolute">
+        <origin xyz="-0.055 0.01825 -0.01925" rpy="1.5707963267948968 -0.0 1.5336479808622357e-32" />
+        <parent link="NCCUP6" />
+        <child link="NTHIGH6" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="NCCUP6_joint" type="revolute">
+        <origin xyz="-0.08365982000000001 0.0483013 0.006" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="NCCUP6" />
+        <axis xyz="0.0 0.0 1.0" />
+        <dynamics damping="2.0" friction="0.2"/>
+              <limit lower="-1.5" upper="1.5" effort="3.0" velocity="6"/>
+    </joint>
+    <joint name="TOP_PLATE_joint" type="fixed">
+        <origin xyz="0.005 0.06210254 0.035" rpy="3.141592653589793 -0.0 0.0" />
+        <parent link="base_link-v1" />
+        <child link="top-plate-v2" />
+    </joint>
+
+    <!--ROS2_CONTROL-->
+    <ros2_control name="HexaSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+
+  <!-- Repeat for ALL joints -->
+  <!-- LEG 1 -->
+    <joint name="NCCUP1_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH1_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT1_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <!-- LEG 2 -->
+    <joint name="NCCUP2_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH2_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT2_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <!-- LEG 3 -->
+    <joint name="NCCUP3_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH3_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT3_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <!-- LEG 4 -->
+    <joint name="NCCUP4_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH4_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT4_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <!-- LEG 5 -->
+    <joint name="NCCUP5_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH5_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT5_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <!-- LEG 6 -->
+    <joint name="NCCUP6_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NTHIGH6_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="NFOOT6_joint">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+    </joint>
+  
+
+  <!-- Add all 18 joints here -->
+    </ros2_control>
+
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>/home/aanimesh/gz_hex/install/rover/share/rover/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot>

@@ -1,0 +1,37 @@
+# brain_config.yaml — Autonomous Hexapod Brain Configuration
+# Load via: ros2 launch rover autonomous.launch.py
+# Required env var: export NVIDIA_API_KEY="nvapi-xxxxxxxxxxxx"
+
+nvidia_brain_node:
+  ros__parameters:
+    # NVIDIA NIM API — reads key from this env variable (never hardcode)
+    nvidia_api_key_env: "NVIDIA_API_KEY"
+    # Free-tier model with native function calling & vision support
+    # Verified working with NVIDIA NIM free-tier API:
+    # Alternatives: "meta/llama-3.2-90b-vision-instruct"
+    #               "deepseek-ai/deepseek-v4.1-flash"
+    model: "meta/llama-3.2-11b-vision-instruct"
+    temperature: 0.3          # Low temp = reliable tool calls
+    max_tokens: 1024
+    max_agentic_iterations: 25    # Allow multi-step reasoning & exploration tasks
+    history_length: 10            # Rolling turn memory (5 user+assistant pairs)
+    wake_word: "hey zoe"          # Robot name is Zoe (filters voice/text queries)
+
+sensor_bridge_node:
+  ros__parameters:
+    lidar_sector_front_deg: 30.0       # ±30° = front sector
+    object_detection_enabled: true
+    snapshot_cache_sec: 0.5            # Cache snapshot 500 ms to reduce latency
+
+tool_dispatcher_node:
+  ros__parameters:
+    nav2_timeout_sec: 60.0             # Max wait for nav2 server
+    rotation_speed_rad_s: 0.5          # Default rotation angular speed
+    cmd_vel_topic: "/cmd_vel"
+
+voice_bridge_node:
+  ros__parameters:
+    record_duration_sec: 8.0           # Sufficient window to speak full queries
+    enable_tts: true
+    auto_listen: true
+

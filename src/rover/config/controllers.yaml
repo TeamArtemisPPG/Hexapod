@@ -1,0 +1,70 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    hexapod_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+hexapod_controller:
+  ros__parameters:
+    joints:
+      - NCCUP1_joint
+      - NTHIGH1_joint
+      - NFOOT1_joint
+      - NCCUP2_joint
+      - NTHIGH2_joint
+      - NFOOT2_joint
+      - NCCUP3_joint
+      - NTHIGH3_joint
+      - NFOOT3_joint
+      - NCCUP4_joint
+      - NTHIGH4_joint
+      - NFOOT4_joint
+      - NCCUP5_joint
+      - NTHIGH5_joint
+      - NFOOT5_joint
+      - NCCUP6_joint
+      - NTHIGH6_joint
+      - NFOOT6_joint
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    gains:
+      NCCUP1_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH1_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT1_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+      NCCUP2_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH2_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT2_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+      NCCUP3_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH3_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT3_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+      NCCUP4_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH4_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT4_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+      NCCUP5_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH5_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT5_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+      NCCUP6_joint:  {p: 40.0, d: 2.0, i: 0.0}
+      NTHIGH6_joint: {p: 40.0, d: 2.0, i: 0.0}
+      NFOOT6_joint:  {p: 40.0, d: 2.0, i: 0.0}
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity

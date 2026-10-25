@@ -1,0 +1,345 @@
+<?xml version='1.0' ?>
+<robot name="grip">
+    <link name="base_footprint"/>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+    </joint>
+
+    <link name="base_link">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="base_link_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="base_link_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_right">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="wheel_right_visual">
+            <origin xyz="-7.993605777301127e-17 0.0 -0.14999999999999997" rpy="1.5707963267948968 -2.7755575615628914e-17 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/wheel_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_right_collision">
+            <origin xyz="-7.993605777301127e-17 0.0 -0.14999999999999997" rpy="1.5707963267948968 -2.7755575615628914e-17 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/wheel_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="arm_base">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="arm_base_visual">
+            <origin xyz="-4.263256414560601e-16 -2.6645352591003756e-17 -0.09999999999999998" rpy="3.777783736540757e-16 2.428380420252192e-31 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/arm_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="arm_base_collision">
+            <origin xyz="-4.263256414560601e-16 -2.6645352591003756e-17 -0.09999999999999998" rpy="3.777783736540757e-16 2.428380420252192e-31 0.0" />
+            <geometry>
+                <mesh filename="package://rover/meshes/arm_base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="wheel_left">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="wheel_left_visual">
+            <origin xyz="4.884981308350689e-17 -6.661338147750939e-18 -0.15" rpy="-1.5707963267948963 2.2204460492503155e-16 -3.8518598887744785e-34" />
+            <geometry>
+                <mesh filename="package://rover/meshes/wheel_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="wheel_left_collision">
+            <origin xyz="4.884981308350689e-17 -6.661338147750939e-18 -0.15" rpy="-1.5707963267948963 2.2204460492503155e-16 -3.8518598887744785e-34" />
+            <geometry>
+                <mesh filename="package://rover/meshes/wheel_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="bicep">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="bicep_visual">
+            <origin xyz="0.01156259941309216 0.16960632740205248 0.009999999999999993" rpy="1.5707963267948966 -1.9428902930940264e-16 -0.068067840827779" />
+            <geometry>
+                <mesh filename="package://rover/meshes/bicep.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="bicep_collision">
+            <origin xyz="0.01156259941309216 0.16960632740205248 0.009999999999999993" rpy="1.5707963267948966 -1.9428902930940264e-16 -0.068067840827779" />
+            <geometry>
+                <mesh filename="package://rover/meshes/bicep.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="forearm">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="forearm_visual">
+            <origin xyz="0.02108473941309216 -0.30928212740205313 -0.010000000000000021" rpy="-1.5707963267948968 2.220446049250314e-16 0.06806784082777886" />
+            <geometry>
+                <mesh filename="package://rover/meshes/forearm.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="forearm_collision">
+            <origin xyz="0.02108473941309216 -0.30928212740205313 -0.010000000000000021" rpy="-1.5707963267948968 2.220446049250314e-16 0.06806784082777886" />
+            <geometry>
+                <mesh filename="package://rover/meshes/forearm.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="claw1">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="claw1_visual">
+            <origin xyz="-0.20599640801891386 0.010000000000000009 -0.3016877238553786" rpy="-7.001091938278085e-17 -0.0680678408277795 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/claw1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="claw1_collision">
+            <origin xyz="-0.20599640801891386 0.010000000000000009 -0.3016877238553786" rpy="-7.001091938278085e-17 -0.0680678408277795 3.141592653589793" />
+            <geometry>
+                <mesh filename="package://rover/meshes/claw1.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="claw2">
+        <inertial>
+  <mass value="0.5"/>
+  <inertia
+    ixx="0.005"
+    iyy="0.005"
+    izz="0.005"
+    ixy="0.0"
+    ixz="0.0"
+    iyz="0.0"/>
+</inertial>
+
+        <visual name="claw2_visual">
+            <origin xyz="0.2059964080189138 0.010000000000000018 -0.3016877238553786" rpy="1.773909887965108e-16 -0.06806784082777981 -9.304529026738426e-32" />
+            <geometry>
+                <mesh filename="package://rover/meshes/claw2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="claw2_collision">
+            <origin xyz="0.2059964080189138 0.010000000000000018 -0.3016877238553786" rpy="1.773909887965108e-16 -0.06806784082777981 -9.304529026738426e-32" />
+            <geometry>
+                <mesh filename="package://rover/meshes/claw2.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+
+    <!--JOINTS-->
+    <joint name="base_link_Revolute-8" type="revolute">
+        <origin xyz="0.0 0.15 0.0" rpy="1.5707963267948966 -0.0 3.141592653589793" />
+        <parent link="base_link" />
+        <child link="wheel_right" />
+        <axis xyz="0.0 0.0 -1.0" />
+
+        <limit lower="-1000" upper="1000" effort="50" velocity="20"/>
+
+    </joint>
+    <joint name="base_link_Revolute-9" type="revolute">
+        <origin xyz="0.0 -0.15 0.0" rpy="1.5707963267948966 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="wheel_left" />
+        <axis xyz="0.0 0.0 1.0" />
+
+        <limit lower="-1000" upper="1000" effort="50" velocity="20"/>
+
+    </joint>
+    <joint name="base_link_Revolute-10" type="revolute">
+        <origin xyz="0.0 0.0 0.1" rpy="0.0 -0.0 0.0" />
+        <parent link="base_link" />
+        <child link="arm_base" />
+        <axis xyz="0.0 0.0 1.0" />
+
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="2.0"/>
+
+    </joint>
+    <joint name="arm_base_Revolute-11" type="revolute">
+        <origin xyz="0.0 -0.01 0.07" rpy="-1.5707963267948966 -4.3790577010150533e-47 -5.397605346934028e-79" />
+        <parent link="arm_base" />
+        <child link="bicep" />
+        <axis xyz="0.0 0.0 1.0" />
+    
+    <limit lower="-3.14" upper="3.14" effort="20" velocity="2.0"/>
+
+    </joint>
+    <joint name="bicep_Revolute-12" type="revolute">
+        <origin xyz="-0.00952214 -0.13967580000000002 0.0" rpy="3.141592653589793 3.61292420504893e-32 4.3790577010150533e-47" />
+        <parent link="bicep" />
+        <child link="forearm" />
+        <axis xyz="0.0 0.0 1.0" />
+    
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="2.0"/>
+
+    </joint>
+    <joint name="forearm_Revolute-13" type="revolute">
+        <origin xyz="-0.18990008999999997 -0.007934480000000051 0.010000000000000002" rpy="-1.5707963267948966 3.612924205048931e-32 0.0" />
+        <parent link="forearm" />
+        <child link="claw2" />
+        <axis xyz="0.0 0.0 1.0" />
+    
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="2.0"/>
+
+    </joint>
+    <joint name="forearm_Revolute-14" type="revolute">
+        <origin xyz="-0.18990008999999997 -0.007934480000000051 -0.03000000000000001" rpy="1.5707963267948966 -3.612924205048931e-32 3.141592653589793" />
+        <parent link="forearm" />
+        <child link="claw1" />
+        <axis xyz="0.0 0.0 1.0" />
+    
+        <limit lower="-3.14" upper="3.14" effort="20" velocity="2.0"/>
+
+    </joint>
+
+    <!-- DIFFERENTIAL DRIVE PLUGIN -->
+<gazebo>
+  <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+    <left_joint>base_link_Revolute-9</left_joint>
+    <right_joint>base_link_Revolute-8</right_joint>
+
+    <wheel_separation>0.35</wheel_separation>
+    <wheel_diameter>0.04</wheel_diameter>
+
+    <max_wheel_torque>20.0</max_wheel_torque>
+    <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+    <publish_wheel_tf>true</publish_wheel_tf>
+
+    <odometry_frame>odom</odometry_frame>
+    <robot_base_frame>base_link</robot_base_frame>
+
+  </plugin>
+</gazebo>
+
+<ros2_control name="ArmSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+
+  <joint name="base_link_Revolute-10">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="arm_base_Revolute-11">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="bicep_Revolute-12">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="forearm_Revolute-13">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="forearm_Revolute-14">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+</ros2_control>
+
+<gazebo>
+  <plugin name="gazebo_ros2_control"
+          filename="libgazebo_ros2_control.so">
+          <parameters>/home/aanimesh/pnp/install/rover/share/rover/config/arm_controllers.yaml</parameters>
+  </plugin>
+</gazebo>
+
+
+
+</robot>
